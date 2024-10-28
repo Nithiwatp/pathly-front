@@ -1,69 +1,68 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Brain } from 'lucide-react';
-import Link from 'next/link';
+"use client";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function Home() {
+  const handleResetAssessment = () => {
+    localStorage.removeItem("currentQuestion");
+    localStorage.removeItem("typeCount");
+    localStorage.removeItem("dominantType");
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background to-muted flex items-center justify-center p-4">
-      <Card className="max-w-2xl w-full">
-        <CardHeader className="text-center">
-          <div className="mx-auto mb-4 h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-            <Brain className="h-6 w-6 text-primary" />
-          </div>
-          <CardTitle className="text-3xl sm:text-4xl mb-2">Discover Your Personality Type</CardTitle>
-          <CardDescription className="text-lg">
-            Take our comprehensive MBTI® assessment to understand your unique personality traits and preferences
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-muted-foreground">
-            <div className="flex items-start space-x-2">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                <span className="text-primary font-semibold">1</span>
+    <main className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-16 flex flex-col items-center justify-center min-h-screen">
+        <Card className="w-full max-w-lg border-4 border-black rounded-lg">
+          <CardContent className="p-8">
+            <div className="flex flex-col items-center text-center space-y-8">
+              <div className="rounded-full bg-yellow-300 w-24 h-24 flex items-center justify-center border-2 border-black">
+                <span className="text-4xl">😎</span>
               </div>
-              <div>
-                <h3 className="font-medium text-foreground">Quick Assessment</h3>
-                <p>Complete a series of carefully crafted questions</p>
+              <div className="space-y-2">
+                <h1
+                  className="text-4xl font-bold"
+                  style={{ fontFamily: "Comic Sans MS, cursive" }}
+                >
+                  Pathly
+                </h1>
+                <div className="w-16 h-1 bg-black mx-auto"></div>
               </div>
+              <p
+                className="text-lg text-black max-w-sm"
+                style={{ fontFamily: "Comic Sans MS, cursive" }}
+              >
+                Is studying feeling more like a chore than a journey?
+              </p>
+              <p
+                className="text-lg text-black max-w-sm"
+                style={{ fontFamily: "Comic Sans MS, cursive" }}
+              >
+                It could be how you are learning.
+              </p>
+              <div className="flex flex-col w-full gap-4 pt-4">
+                <Link href="/assessment">
+                  <Button
+                    className="w-full bg-white hover:bg-yellow-100 text-black border-4 border-black rounded-md 
+                             font-bold text-lg py-6 transform transition-all duration-200
+                             hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                    style={{ fontFamily: "Comic Sans MS, cursive" }}
+                    onClick={handleResetAssessment}
+                  >
+                    Discover your right path!
+                  </Button>
+                </Link>
+              </div>
+              <p
+                className="text-sm text-gray-600"
+                style={{ fontFamily: "Comic Sans MS, cursive" }}
+              >
+                The journey to personalize your learning experience
+              </p>
             </div>
-            <div className="flex items-start space-x-2">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                <span className="text-primary font-semibold">2</span>
-              </div>
-              <div>
-                <h3 className="font-medium text-foreground">Instant Results</h3>
-                <p>Get detailed insights about your personality type</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-2">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                <span className="text-primary font-semibold">3</span>
-              </div>
-              <div>
-                <h3 className="font-medium text-foreground">Deep Understanding</h3>
-                <p>Learn about your strengths and growth areas</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-2">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                <span className="text-primary font-semibold">4</span>
-              </div>
-              <div>
-                <h3 className="font-medium text-foreground">Personal Growth</h3>
-                <p>Get recommendations for personal development</p>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center pt-4">
-            <Link href="/assessment">
-              <Button size="lg" className="text-lg px-8">
-                Start Assessment
-              </Button>
-            </Link>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     </main>
   );
 }
