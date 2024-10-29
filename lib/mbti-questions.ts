@@ -63,7 +63,7 @@ export const learningElements = {
   A: {
     title: "Active",
     description:
-      "Prefers hands-on learning, experimentation, and active engagement",
+      "Prefers hands-on learning, experimentation, and active engeagement",
     traits: ["Experimental", "Learning by doing", "Interactive", "Energetic"],
   },
   R: {

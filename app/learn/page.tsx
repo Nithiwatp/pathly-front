@@ -91,9 +91,9 @@ export default function LearnPage() {
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-yellow-300 w-16 h-16 flex items-center justify-center border-2 border-black">
-                        <IconComponent className="text-2xl" />
-                      </div>
+                      {/* <div className="rounded-full bg-yellow-300 w-16 h-16 flex items-center justify-center border-2 border-black">
+                        <IconComponent />
+                      </div> */}
                       <div>
                         <h2
                           className="text-xl font-bold"
