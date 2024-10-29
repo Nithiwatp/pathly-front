@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { OpenAI } from "langchain";
+import { ChatOpenAI } from "@langchain/openai";
 
-const model = new OpenAI({
+const model = new ChatOpenAI({
   modelName: "gpt-3.5-turbo", // or your preferred model
   openAIApiKey: process.env.OPENAI_API_KEY, // Make sure to set this in your .env.local file
 });
